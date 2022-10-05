@@ -18,14 +18,14 @@ public class bombaCombustivel {
     // metodos
     public double abastecerPorValor(double valor){
         double litros = valor / this.valorLitro;
-        setQuantidadeCombustivel(getQuantidadeCombustivel() - litros);
+        alterarQuantidadeCombustivel(litros);
 
         return litros;
     }
 
     public double abastecerPorLitro(double litros){
         double valor = litros * this.valorLitro;
-        setQuantidadeCombustivel(getQuantidadeCombustivel()- litros);
+        alterarQuantidadeCombustivel(litros);
 
         return valor;
     }
@@ -35,13 +35,13 @@ public class bombaCombustivel {
         return getValorLitro();
     }
 
-    public double alterarCombustivel(String tipo){
+    public String alterarCombustivel(String tipo){
         setTipoCombustivel(tipo);
-        return getValorLitro();
+        return getTipoCombustivel();
     }
 
     public double alterarQuantidadeCombustivel(double quantidade){
-        setQuantidadeCombustivel(quantidade);
+        setQuantidadeCombustivel(getQuantidadeCombustivel() - quantidade);
         return getQuantidadeCombustivel();
     }
 
